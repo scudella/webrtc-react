@@ -1,4 +1,14 @@
+import {useDashboardContext} from '@/components/context/use-dashboard-context'
+import Hero from '@/components/Hero'
+import {Navigate} from 'react-router-dom'
+
 function Landing() {
-  return <h1 className='text-4xl'>Landing</h1>
+  const {user} = useDashboardContext()
+
+  if (user) {
+    return <Navigate to='/dashboard' replace />
+  }
+
+  return <Hero />
 }
 export default Landing

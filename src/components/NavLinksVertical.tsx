@@ -1,6 +1,7 @@
 import {type FC} from 'react'
 import {NavLink, useLocation} from 'react-router-dom'
-import {navLink, links} from './helpers/nav-links'
+import {navLink, links, linksWithDashBoard} from './helpers/nav-links'
+import {useDashboardContext} from './context/use-dashboard-context'
 
 interface NavLinksProps {
   onClick?: () => void
@@ -8,13 +9,13 @@ interface NavLinksProps {
 
 const NavLinksVertical: FC<NavLinksProps> = ({onClick}) => {
   const {pathname} = useLocation()
-  const user = true
+  const {user} = useDashboardContext() ?? {}
+  const renderedLinks = user ? linksWithDashBoard : links
 
   return (
     <ul className='flex flex-col gap-2 mt-2'>
-      {links.map(({id, url, text}) => {
+      {renderedLinks.map(({id, url, text}) => {
         const active = pathname === url
-        if (url === '/dashboard' && !user) return null
 
         return (
           <li key={id}>

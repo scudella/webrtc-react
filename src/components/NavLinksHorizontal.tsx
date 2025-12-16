@@ -7,23 +7,24 @@ import {
   NavigationMenuLink,
 } from '@/components/ui/navigation-menu'
 import {navLink} from './helpers/nav-links'
-import {links} from './helpers/nav-links'
+import {links, linksWithDashBoard} from './helpers/nav-links'
+import {useDashboardContext} from './context/use-dashboard-context'
 
 interface NavLinksProps {
   onClick?: () => void
 }
 
 const NavLinksHorizontal: FC<NavLinksProps> = ({onClick}) => {
-  // const user = useSelector((state) => state.userState.user)
   const {pathname} = useLocation()
-  const user = true
+  const {user} = useDashboardContext()
+  const renderedLinks = user ? linksWithDashBoard : links
 
   return (
     <NavigationMenu>
       <NavigationMenuList>
-        {links.map(({id, url, text}) => {
+        {renderedLinks.map(({id, url, text}) => {
           const active = pathname === url
-          if (url === '/dashboard' && !user) return null
+          // if (url === '/dashboard' && !user) return null
 
           return (
             <NavigationMenuItem key={id}>

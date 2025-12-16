@@ -2,9 +2,12 @@ import {cva} from 'class-variance-authority'
 
 export const links = [
   {id: 1, url: '/', text: 'home'},
-  {id: 2, url: '/dashboard', text: 'dashboard'},
-  {id: 3, url: '/admin', text: 'admin'},
-  {id: 4, url: '/about', text: 'about'},
+  {id: 2, url: '/about', text: 'about'},
+]
+
+export const linksWithDashBoard = [
+  {id: 1, url: '/dashboard', text: 'home'},
+  {id: 2, url: '/about', text: 'about'},
 ]
 
 export const navLink = cva(

@@ -13,7 +13,7 @@ import {
 
 function Login() {
   return (
-    <section className='h-screen grid place-items-center'>
+    <section className='grid place-items-center'>
       <Card className='w-full max-w-sm shadow-lg'>
         <CardHeader>
           <CardTitle className='text-3xl'>Login</CardTitle>
