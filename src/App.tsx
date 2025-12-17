@@ -14,6 +14,7 @@ import {Toaster} from '@/components/ui/sonner'
 import {loginAction} from './pages/loaders-actions/loginAction'
 import {authLoader} from './pages/loaders-actions/authLoader'
 import {publicOnlyLoader} from './pages/loaders-actions/publicOnlyLoader'
+import {userCountLoader} from './pages/loaders-actions/userLoader'
 
 const router = createBrowserRouter([
   {
@@ -45,6 +46,7 @@ const router = createBrowserRouter([
           {
             index: true,
             element: <Admin />,
+            loader: userCountLoader,
           },
         ],
       },
