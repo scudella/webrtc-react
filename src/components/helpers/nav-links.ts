@@ -6,8 +6,9 @@ export const links = [
 ]
 
 export const linksWithDashBoard = [
-  {id: 1, url: '/dashboard', text: 'home'},
-  {id: 2, url: '/about', text: 'about'},
+  {id: 1, url: '/dashboard', text: 'users'},
+  {id: 2, url: '/dashboard/room', text: 'room'},
+  {id: 3, url: '/about', text: 'about'},
 ]
 
 export const navLink = cva(

@@ -15,6 +15,8 @@ import {loginAction} from './pages/loaders-actions/loginAction'
 import {authLoader} from './pages/loaders-actions/authLoader'
 import {publicOnlyLoader} from './pages/loaders-actions/publicOnlyLoader'
 import {userCountLoader} from './pages/loaders-actions/userLoader'
+import Room from './pages/room'
+import {meetingLoader} from './pages/loaders-actions/meetingLoader'
 
 const router = createBrowserRouter([
   {
@@ -47,6 +49,11 @@ const router = createBrowserRouter([
             index: true,
             element: <Admin />,
             loader: userCountLoader,
+          },
+          {
+            path: 'room',
+            element: <Room />,
+            loader: meetingLoader,
           },
         ],
       },
